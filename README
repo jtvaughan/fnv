@@ -1,0 +1,84 @@
+Title: Fowler-Noll-Vo (FNV) Hash Tool
+Author: Jordan Vaughan
+Date: May 23, 2015
+Format: Plain text
+Encoding: UTF-8
+
+
+INTRODUCTION
+
+    fnv(1) is a compact tool for computing Fowler-Noll-Vo (FNV)
+    hashes.  It can compute hashes for strings passed as command-
+    line arguments or data fed through standard input.  In the
+    latter case, fnv(1) can compute hashes for each line of text
+    or for the entire stream.
+
+INSTALLATION
+
+    fnv(1) comes with a Makefile.  To build fnv(1), navigate to
+    the source directory (the directory containing this README
+    file) and run make(1):
+
+        $ make
+
+    This should build fnv(1) in the same directory.
+
+    To install fnv(1), run make(1) thus:
+
+        $ make install
+
+    You can also build a simple tar(1) file containing the
+    executable, the public domain dedication file, and this
+    README file thus:
+
+        $ make dist
+
+    You can delete the built executable, object files, and
+    the tar(1) file by running:
+
+        $ make clean
+
+    Several build parameters (such as CFLAGS and LDFLAGS)
+    and installation parameters (such as BINDIR, INSTALL_USER,
+    and INSTALL_GROUP) can be set prior to running make(1).
+    Please read the top of the Makefile for directions.
+
+USE
+
+    Usage: fnv [-a] [-h] [-u] [-X] [-1] [-32] [STRINGS]
+
+    Description:
+
+        Hash each string in STRINGS with the Fowler-Noll-Vo (FNV) hash
+        algorithm and print the results, one hash per line per string.
+        If STRINGS does not exist, then hash each line from standard input
+        individually and print the results one per line, or hash all of
+        standard input and print one result if -a or -b is specified.
+
+    Options:
+
+        -a                     hash all of standard input rather than each line
+                               (meaningless if STRINGS are specified)
+        -h                     show this long help message and exit
+        -u                     disable standard output buffering
+        -X                     print hashes with uppercase hex letters instead
+                               of lowercase ones
+        -1                     use the FNV-1 algorithm rather than FNV-1a
+        -32                    compute 32-bit hashes instead of 64-bit ones
+
+COPYRIGHT
+
+    Copyright?  Hah!  Here's my "copyright":
+
+        This tool was written in 2015 by Jordan Vaughan.
+
+        To the extent possible under law, the author(s) have dedicated all
+        copyright and related and neighboring rights to this software to the
+        public domain worldwide. This software is distributed without any
+        warranty.
+
+        You should have received a copy of the CC0 Public Domain Dedication
+        along with this software. If not, see
+        http://creativecommons.org/publicdomain/zero/1.0/.
+
+    A full copy of the public domain dedication is in COPYING.

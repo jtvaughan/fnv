@@ -19,7 +19,7 @@
 BINFILE ?= fnv
 
 # compilation flags
-CFLAGS ?= -O2 -g -Wall -Werror
+CFLAGS ?= -std=c11 -O2 -g -Wall -Werror
 CPPFLAGS ?=
 
 # the installation program (install(1))
